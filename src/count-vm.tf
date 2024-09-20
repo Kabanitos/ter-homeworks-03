@@ -5,6 +5,7 @@ resource "yandex_compute_instance" "platform" {
   count       = var.yandex_compute_instance.count
   name        = "netology-develop-platorm-${count.index + 1}"
   platform_id = var.yandex_compute_instance.platform_id
+  depends_on  = [yandex_compute_instance.each_vm]
 
   resources {
     cores         = var.yandex_compute_instance.cores
