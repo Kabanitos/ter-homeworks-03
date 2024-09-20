@@ -74,7 +74,9 @@ variable "metadata" {
   })
   default = {
     serial-port-enable = 1
-    ssh-keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFjeEOGD6Conv4furMWud4yGqKg1NRo1zX4/zWpOOMZe a.mishanin@MacBook-Pro-Aleksandr.local"
+    ssh-keys           = "~/.ssh/id_rsa.pub"
   }
 
 }
+
+

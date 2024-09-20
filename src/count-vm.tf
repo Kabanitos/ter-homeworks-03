@@ -2,8 +2,8 @@ data "yandex_compute_image" "ubuntu" {
   family = var.family
 }
 resource "yandex_compute_instance" "platform" {
-  count       = 2 #var.yandex_compute_instance.count
-  name        = "netology-develop-platorm-${count.index}"
+  count       = var.yandex_compute_instance.count
+  name        = "netology-develop-platorm-${count.index + 1}"
   platform_id = var.yandex_compute_instance.platform_id
 
   resources {
@@ -21,7 +21,7 @@ resource "yandex_compute_instance" "platform" {
   }
   network_interface {
     subnet_id          = yandex_vpc_subnet.develop.id
-    security_group_ids = yandex_vpc_security_group.example.id
+    security_group_ids = [yandex_vpc_security_group.example.id]
     nat                = var.nat
 
   }
