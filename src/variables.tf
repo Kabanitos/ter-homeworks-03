@@ -70,11 +70,11 @@ variable "nat" {
 variable "metadata" {
   type = object({
     serial-port-enable = number
-    ssh-keys           = string
+    #   ssh-keys           = string
   })
   default = {
     serial-port-enable = 1
-    ssh-keys           = "~/.ssh/id_rsa.pub"
+    #    ssh-keys           = "~/.ssh/id_rsa.pub"
   }
 
 }
