@@ -25,9 +25,9 @@ variable "each_vm" {
 data "yandex_compute_image" "ubuntu-each" {
   family = var.family
 }
-resource "yandex_compute_instance" "each_vm" {
+resource "yandex_compute_instance" "db" {
   for_each    = var.each_vm
-  name        = "netologu-vm-${each.key}"
+  name        = "db-${each.key}"
   platform_id = var.yandex_compute_instance.platform_id
 
   resources {
